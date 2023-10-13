@@ -5,4 +5,5 @@ service  = "cbx"
 
 tags = {
   terraform = true
+  github = true
 }
