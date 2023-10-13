@@ -3,10 +3,10 @@ variable "rg-names" {
   default = []
 }
 
-variable "object_id" {
-  type      = string
-  sensitive = true
-}
+# variable "object_id" {
+#   type      = string
+#   sensitive = true
+# }
 
 variable "location" {
   type    = string

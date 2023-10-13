@@ -54,7 +54,7 @@ module "key-vault" {
 
   kv-conf   = var.kv-conf
   tenant_id = data.azurerm_client_config.current.tenant_id
-  object_id = var.object_id
+  object_id = data.azurerm_client_config.current.object_id
 
   tags = var.tags
 }
