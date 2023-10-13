@@ -36,4 +36,9 @@ jobs:
       - name: 'Terraform: Plan'
         run: terraform plan -out tfplan
         working-directory: ./main
-               
+      - name: 'Upload TFPlan'
+        uses: actions/upload-artifact
+        with:
+          path: ./main/tfplan
+          name: tfplan
+    
