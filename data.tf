@@ -1,1 +1,1 @@
-data "azurerm_subscription" "current_sub" {}
+data "azurerm_client_config" "current" {}

@@ -14,6 +14,7 @@ output "kv-id" {
 output "str-id" {
   value = module.storage-account.str-id
 }
-output "str-containers" {
-  value = module.storage-account.str-containers
+
+output "vm-pip" {
+  value = module.compute-linux.vm-pip
 }
