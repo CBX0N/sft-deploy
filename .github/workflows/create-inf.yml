@@ -11,6 +11,8 @@ env:
   cn: ${{ secrets.container_name }}
   key: ${{ secrets.key }}
 
+permissions:
+  id-token: write  
 jobs:
   plan:
     runs-on: ubuntu-latest
