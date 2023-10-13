@@ -1,4 +1,4 @@
-name: Create INF
+name: Deploy INF
 
 on: [push]
 
@@ -14,18 +14,26 @@ permissions:
 jobs:
   plan:
     runs-on: ubuntu-latest
+    environment: live
     env:
       rg: ${{ secrets.resource_group_name }}
       str: ${{ secrets.storage_account_name }}
       cn: ${{ secrets.container_name }}
       key: ${{ secrets.key }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout IaC
+        uses: actions/checkout@v3
         with:
           path: main
-      - uses: actions/checkout@v3
+      - name: Checkout TF-Modules
+        uses: actions/checkout@v3
         with:
           path: tf-modules
           repository: "cbx0n/tf-modules"
-      - run: terraform init -backend-config "resource_group_name=$rg" -backend-config "storage_account_name=$str" -backend-config "container_name=$cn" -backend-config "key=$key"
+      - name: 'Terraform: Init'
+        run: terraform init -backend-config "resource_group_name=$rg" -backend-config "storage_account_name=$str" -backend-config "container_name=$cn" -backend-config "key=$key"
         working-directory: ./main
+      - name: 'Terraform: Plan'
+        run: terraform plan -out tfplan
+        working-directory: ./main
+               
