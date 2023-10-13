@@ -7,7 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        name: "Checking out IaC"
+        with:
+          repository: self
       - uses: actions/checkout@v3
+        name: "Checking Out TF-Modules"
         with:
           repository: "cbx0n/tf-modules"
       - run: pwd
