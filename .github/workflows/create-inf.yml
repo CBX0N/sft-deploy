@@ -16,7 +16,7 @@ jobs:
     name: "IaC Plan"
     runs-on: ubuntu-latest
     environment: live
-    if: contains(${{ vars.ACTION }}, 'deploy') 
+    if: ${{contains(vars.ACTION, 'deploy') }}
     env:
       rg: ${{ secrets.resource_group_name }}
       str: ${{ secrets.storage_account_name }}
@@ -50,7 +50,7 @@ jobs:
     needs: Plan
     runs-on: ubuntu-latest
     environment: live
-    if: contains(${{ vars.ACTION }}, 'deploy') 
+    if: ${{contains(vars.ACTION, 'deploy') }}
     env:
       rg: ${{ secrets.resource_group_name }}
       str: ${{ secrets.storage_account_name }}
