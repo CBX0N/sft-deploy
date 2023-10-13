@@ -120,3 +120,7 @@ variable "vm-conf" {
     }))
   })
 }
+variable "ssh_public_key" {
+  type = string
+  default = ""
+}

@@ -36,6 +36,8 @@ jobs:
       - name: 'Terraform: Plan'
         run: terraform plan -out tfplan
         working-directory: ./main
+        env:
+          TF_VAR_ssh_public_key: ${{ secrets.ssh_public_key }}
       - name: 'Upload TFPlan'
         uses: actions/upload-artifact@v1
         with:

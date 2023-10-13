@@ -85,6 +85,7 @@ module "compute-linux" {
   vm-conf = var.vm-conf
   snet-id = module.core-networking.snet-id["app"]
   kv-id   = module.key-vault.kv-id
+  ssh_public_key = var.ssh_public_key
   custom_data = filebase64("./cloudinit.yml")
 
   tags = var.tags
