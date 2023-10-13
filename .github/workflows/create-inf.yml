@@ -2,6 +2,12 @@ name: Create INF
 
 on: [push]
 
+env:
+  rg: ${{ secrets.resource_group_name }}
+  str: ${{ secrets.storage_account_name }}
+  cn: ${{ secrets.container_name }}
+  key: ${{ secrets.key }}
+
 jobs:
   plan:
     runs-on: ubuntu-latest
@@ -14,5 +20,5 @@ jobs:
           path: tf-modules
           repository: "cbx0n/tf-modules"
       - run: |
-          terraform init -backend-config "resource_group_name=${{secrets.resource_group_name}}" -backend-config "storage_account_name=${{secrets.storage_account_name}}" -backend-config "container_name=${{secrets.container_name}}" -backend-config "key=${{secrets.key}}"
+          terraform init -backend-config "resource_group_name=$rg" -backend-config "storage_account_name=$str" -backend-config "container_name=$cn" -backend-config "key=$key"
         working-directory: ./main
