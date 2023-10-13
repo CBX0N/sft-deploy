@@ -13,5 +13,6 @@ jobs:
         with:
           path: tf-modules
           repository: "cbx0n/tf-modules"
-      - run: ls
+      - run: terraform init
+        working-directory: ./main
 
