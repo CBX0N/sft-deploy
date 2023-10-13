@@ -4,6 +4,12 @@ terraform {
       source = "hashicorp/azurerm"
     }
   }
+  backend "azurerm" {
+    resource_group_name  = "rg-tf-cbx-dev-uks-001"
+    storage_account_name = "satfcbxdevuks001"
+    container_name       = "tfstate"
+    key                  = "live.terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
