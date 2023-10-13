@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  plan:
+  Plan:
     name: "IaC Plan"
     runs-on: ubuntu-latest
     environment: live
@@ -46,6 +46,7 @@ jobs:
           name: tfplan
   Apply:
     name: "IaC Apply"
+    needs: Plan
     runs-on: ubuntu-latest
     environment: live
     env:
