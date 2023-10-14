@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   Plan:
-    if: ${{ startsWith(vars.ACTION, 'deploy') }}
+    if: ${{ ! startsWith(vars.ACTION, 'deploy') }}
     name: "IaC Plan"
     runs-on: ubuntu-latest
     environment: live
@@ -80,7 +80,7 @@ jobs:
     name: "IaC Destroy"
     runs-on: ubuntu-latest
     environment: live
-    if: ${{ startsWith(vars.ACTION, 'destroy') }}
+    if: ${{ ! startsWith(vars.ACTION, 'destroy') }}
     env:
       rg: ${{ secrets.resource_group_name }}
       str: ${{ secrets.storage_account_name }}
