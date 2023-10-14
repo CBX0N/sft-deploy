@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   Plan:
-    if: ${{ ! startsWith(vars.ACTION, 'deploy') }}
+    if: ${{ startsWith(vars.ACTION, 'deploy') }}
     name: "IaC Plan"
     runs-on: ubuntu-latest
     environment: live
@@ -77,7 +77,7 @@ jobs:
         run: terraform apply --auto-approve tfplan
         working-directory: ./main
   Destroy:
-    if: ${{ ! startsWith(vars.ACTION, 'destroy') }}
+    if: ${{ startsWith(vars.ACTION, 'destroy') }}
     name: "IaC Destroy"
     runs-on: ubuntu-latest
     environment: live
