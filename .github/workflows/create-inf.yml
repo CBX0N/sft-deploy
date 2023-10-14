@@ -69,7 +69,7 @@ jobs:
       - name: 'Terraform: Init'
         run: terraform init -backend-config "resource_group_name=$rg" -backend-config "storage_account_name=$str" -backend-config "container_name=$cn" -backend-config "key=$key"
         working-directory: ./main
-      - name: 'Upload TFPlan'
+      - name: 'Download TFPlan'
         uses: actions/download-artifact@v1
         with:
           path: ./main
@@ -77,3 +77,30 @@ jobs:
       - name: 'Terraform: Apply'
         run: terraform apply --auto-approve tfplan
         working-directory: ./main
+  Destroy:
+    name: "IaC Destroy"
+    runs-on: ubuntu-latest
+    environment: live
+    if: ${{contains(vars.ACTION, 'destroy') }}
+    env:
+      rg: ${{ secrets.resource_group_name }}
+      str: ${{ secrets.storage_account_name }}
+      cn: ${{ secrets.container_name }}
+      key: ${{ secrets.key }}
+    steps:
+      - name: Checkout IaC
+        uses: actions/checkout@v3
+        with:
+          path: main
+      - name: Checkout TF-Modules
+        uses: actions/checkout@v3
+        with:
+          path: tf-modules
+          repository: "cbx0n/tf-modules"
+      - name: 'Terraform: Init'
+        run: terraform init -backend-config "resource_group_name=$rg" -backend-config "storage_account_name=$str" -backend-config "container_name=$cn" -backend-config "key=$key"
+        working-directory: ./main
+      - name: 'Terraform: Destroy'
+        run: terraform destroy --auto-approve
+        working-directory: ./main
+      
