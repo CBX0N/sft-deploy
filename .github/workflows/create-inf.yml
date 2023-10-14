@@ -102,4 +102,6 @@ jobs:
       - name: 'Terraform: Destroy'
         run: terraform destroy --auto-approve
         working-directory: ./main
-      
+        env:
+          TF_VAR_ssh_public_key: ${{ secrets.ssh_public_key }}
+
