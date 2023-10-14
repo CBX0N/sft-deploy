@@ -45,9 +45,9 @@ No requirements.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_kv-id"></a> [kv-id](#output\_kv-id) | n/a |
-| <a name="output_resource-groups"></a> [resource-groups](#output\_resource-groups) | n/a |
-| <a name="output_snet-ids"></a> [snet-ids](#output\_snet-ids) | n/a |
-| <a name="output_str-id"></a> [str-id](#output\_str-id) | n/a |
-| <a name="output_vm-pip"></a> [vm-pip](#output\_vm-pip) | n/a |
-| <a name="output_vnet-id"></a> [vnet-id](#output\_vnet-id) | n/a |
+| <a name="output_kv-id"></a> [kv-id](#output\_kv-id) | ID of Key Vault Created |
+| <a name="output_resource-groups"></a> [resource-groups](#output\_resource-groups) | List of Resource Groups Created |
+| <a name="output_snet-ids"></a> [snet-ids](#output\_snet-ids) | ID's of Subnets Created |
+| <a name="output_str-id"></a> [str-id](#output\_str-id) | ID of Storage Account Created |
+| <a name="output_vm-pip"></a> [vm-pip](#output\_vm-pip) | Public IP of VM Created |
+| <a name="output_vnet-id"></a> [vnet-id](#output\_vnet-id) | ID of Virtual Network Created |
