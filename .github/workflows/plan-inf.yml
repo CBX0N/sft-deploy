@@ -1,6 +1,6 @@
 name: Plan IaC - Live
 
-on: [push]
+on: [push, workflow_dispatch]
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
