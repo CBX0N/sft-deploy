@@ -31,6 +31,30 @@ nsg-conf = {
     source_address_prefix      = "*"
     source_port_range          = "*"
   }
+  "allow-wireguard" = {
+    name                       = "allow-ssh"
+    access                     = "Allow"
+    description                = "Allow Wireguard Access"
+    direction                  = "Inbound"
+    priority                   = "210"
+    protocol                   = "Tcp"
+    destination_address_prefix = "*"
+    destination_port_range     = "5000"
+    source_address_prefix      = "*"
+    source_port_range          = "*"
+  }
+  "allow-wireguard-ui" = {
+    name                       = "allow-ssh"
+    access                     = "Allow"
+    description                = "Allow Wireguard Ui Access"
+    direction                  = "Inbound"
+    priority                   = "210"
+    protocol                   = "Udp"
+    destination_address_prefix = "*"
+    destination_port_range     = "51820"
+    source_address_prefix      = "*"
+    source_port_range          = "*"
+  }
 }
 
 #### Key Vault Config ####
