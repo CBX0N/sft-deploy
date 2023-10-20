@@ -32,7 +32,7 @@ nsg-conf = {
     source_port_range          = "*"
   }
   "allow-wireguard" = {
-    name                       = "allow-ssh"
+    name                       = "allow-wireguard"
     access                     = "Allow"
     description                = "Allow Wireguard Access"
     direction                  = "Inbound"
@@ -44,7 +44,7 @@ nsg-conf = {
     source_port_range          = "*"
   }
   "allow-wireguard-ui" = {
-    name                       = "allow-ssh"
+    name                       = "allow-wireguard-ui"
     access                     = "Allow"
     description                = "Allow Wireguard Ui Access"
     direction                  = "Inbound"
