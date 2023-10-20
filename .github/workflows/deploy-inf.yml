@@ -1,6 +1,6 @@
 name: Deploy IaC - Live
 
-on: [push,workflow_dispatch]
+on: [workflow_dispatch]
 
 env:
   ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
