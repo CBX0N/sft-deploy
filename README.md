@@ -51,3 +51,5 @@ No requirements.
 | <a name="output_str-id"></a> [str-id](#output\_str-id) | ID of Storage Account Created |
 | <a name="output_vm-pip"></a> [vm-pip](#output\_vm-pip) | Public IP of VM Created |
 | <a name="output_vnet-id"></a> [vnet-id](#output\_vnet-id) | ID of Virtual Network Created |
+
+[![Plan IaC - Live](https://github.com/CBX0N/sft-deploy/actions/workflows/plan-inf.yml/badge.svg?event=push)](https://github.com/CBX0N/sft-deploy/actions/workflows/plan-inf.yml)
