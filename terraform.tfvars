@@ -31,15 +31,15 @@ nsg-conf = {
     source_address_prefix      = "*"
     source_port_range          = "*"
   }
-  "allow-wireguard" = {
-    name                       = "allow-wireguard"
+  "allow-firefox" = {
+    name                       = "allow-firefox"
     access                     = "Allow"
-    description                = "Allow Wireguard Access"
+    description                = "Allow Firefox Access"
     direction                  = "Inbound"
     priority                   = "210"
     protocol                   = "Udp"
     destination_address_prefix = "*"
-    destination_port_range     = "51820"
+    destination_port_range     = "5800"
     source_address_prefix      = "*"
     source_port_range          = "*"
   }
